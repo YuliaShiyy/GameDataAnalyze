@@ -1,25 +1,25 @@
 # @Author : Yulia
 # @File   : clustering.py
-# @Time   : 2025/9/3 0:39
+# @Time   : 2025/9/3
 
 import streamlit as st
 import plotly.express as px
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 
-def render_clustering(filtered_data):
-    st.subheader("🧩 Player Cluster Analysis (KMeans)")
 
-    # Numerical features
+def render_clustering(filtered_data, render=True):
     needed = ["Age", "SessionsPerWeek", "PlayerLevel"]
     if not all(c in filtered_data.columns for c in needed):
-        st.warning("Cluster analysis cannot be performed because the columns required for clustering are missing.")
-        return
+        if render:
+            st.warning("❌ Cluster analysis cannot be performed because the columns required for clustering are missing.")
+        return None, None
 
     data_clu = filtered_data[needed].dropna()
     if len(data_clu) <= 10:
-        st.warning("The amount of data is insufficient to perform cluster analysis.")
-        return
+        if render:
+            st.warning("⚠️ The amount of data is insufficient to perform cluster analysis.")
+        return None, None
 
     # Standardization + KMeans
     scaler = StandardScaler()
@@ -31,12 +31,19 @@ def render_clustering(filtered_data):
     data_show = data_clu.copy()
     data_show["Cluster"] = labels
 
+    # 3D 聚类结果
     fig_cluster = px.scatter_3d(
         data_show, x="Age", y="SessionsPerWeek", z="PlayerLevel",
-        color="Cluster", title="Player Clustering (3D Clustering Results)"
+        color="Cluster", title="Player Clustering (3D Results)"
     )
-    st.plotly_chart(fig_cluster, use_container_width=True)
 
-    st.write("**The Average Eigenvalue of Each Cluster：**")
-    st.dataframe(data_show.groupby("Cluster").mean(numeric_only=True).round(2), use_container_width=True)
-    return fig_cluster
+    # 各簇均值
+    cluster_summary = data_show.groupby("Cluster").mean(numeric_only=True).round(2)
+
+    if render:
+        st.subheader("🧩 Player Cluster Analysis (KMeans)")
+        st.plotly_chart(fig_cluster, use_container_width=True)
+        st.write("**📊 Average Value of Each Cluster:**")
+        st.dataframe(cluster_summary, use_container_width=True)
+
+    return fig_cluster, cluster_summary
