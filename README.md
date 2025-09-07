@@ -56,6 +56,14 @@ This project is part of my portfolio and demonstrates skills in **data engineeri
 ---
 
 ## 📊 Example Dashboard
+### Overview
+![overview](assets/overview.png)
+
+### Retention & Funnel
+![retention](assets/retention&funnel.png)
+
+### Simulation Trend
+![correlation](assets/simulation_trend.png)
 
 
 ---
