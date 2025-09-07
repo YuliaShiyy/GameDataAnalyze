@@ -55,12 +55,17 @@ This project is part of my portfolio and demonstrates skills in **data engineeri
 
 ---
 
+## 📊 Example Dashboard
+
+
+---
+
 ## ⚡ Installation
 
 Clone this repo and install dependencies:
 
     ```bash
-    git clone https://github.com/<your-username>/Game_Data_Analyze.git
+    git clone https://github.com/YuliaShiyy/Game_Data_Analyze.git
     cd Game_Data_Analyze
     pip install -r requirements.txt
 ---
