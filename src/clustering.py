@@ -31,13 +31,13 @@ def render_clustering(filtered_data, render=True):
     data_show = data_clu.copy()
     data_show["Cluster"] = labels
 
-    # 3D 聚类结果
+    # 3D clustering results
     fig_cluster = px.scatter_3d(
         data_show, x="Age", y="SessionsPerWeek", z="PlayerLevel",
         color="Cluster", title="Player Clustering (3D Results)"
     )
 
-    # 各簇均值
+    # Cluster mean
     cluster_summary = data_show.groupby("Cluster").mean(numeric_only=True).round(2)
 
     if render:

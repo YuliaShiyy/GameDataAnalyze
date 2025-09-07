@@ -69,7 +69,7 @@ if fig_new: all_figs["New Players Trend"] = fig_new
 if fig_purchase_trend: all_figs["Purchase Trend"] = fig_purchase_trend
 if fig_sessions_trend: all_figs["Average Sessions Trend"] = fig_sessions_trend
 
-# 多选图表（默认全选）
+# select charts(default: all)
 selected_charts = st.sidebar.multiselect(
     "Select charts to include in the report",
     list(all_figs.keys()),

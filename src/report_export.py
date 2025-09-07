@@ -42,7 +42,6 @@ def export_full_report(metrics, results_df, figs, model_acc, selected_charts):
         if title not in selected_charts:
             continue
         img_buf = BytesIO()
-        # 压缩 scale=0.5 以提高速度
         fig.write_image(img_buf, format="png")
         img_buf.seek(0)
         story.append(Paragraph(title, styles["Heading2"]))

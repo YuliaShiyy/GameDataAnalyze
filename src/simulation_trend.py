@@ -9,7 +9,7 @@ import plotly.express as px
 
 
 def render_trend(filtered_data, render=True):
-    # 🔹 复制一份数据，避免污染原始数据
+    # Make a copy of the data to avoid contaminating the original data
     tmp = filtered_data.copy()
 
     if "JoinDate" not in tmp.columns:
@@ -22,7 +22,7 @@ def render_trend(filtered_data, render=True):
     if "PlayerID" not in tmp.columns:
         tmp["PlayerID"] = range(1, len(tmp) + 1)
 
-    # 🔹 生成趋势数据
+    # Generate trend data
     trend = tmp.groupby("Month").agg({
         "PlayerID": "count",
         "InGamePurchases": "sum",
@@ -35,7 +35,6 @@ def render_trend(filtered_data, render=True):
         "SessionsPerWeek": "Average Sessions"
     }, inplace=True)
 
-    # 🔹 三个图表
     fig_new = px.line(trend, x="Month", y="New Players", markers=True,
                       title="📈 New Players per Month")
     fig_purchase_trend = px.line(trend, x="Month", y="Paying Players", markers=True,

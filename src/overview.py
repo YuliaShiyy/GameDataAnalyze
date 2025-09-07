@@ -14,7 +14,7 @@ def render_overview(filtered_data, selected_region, render=True):
         "Proportion of highly engaged players": f"{(filtered_data['EngagementLevel'] == 'High').mean()*100:.1f}%"
     }
 
-    # 图表
+    # figs
     fig_location = px.histogram(filtered_data, x="Location", title=f"Geography ({selected_region})", text_auto=True)
     fig_age = px.histogram(filtered_data, x="Age", nbins=20, title="Age Distribution")
     fig_gender = px.pie(filtered_data, names="Gender", title="Gender Distribution")
