@@ -53,17 +53,7 @@ This project is part of my portfolio and demonstrates skills in **data engineeri
     │── requirements.txt # Dependencies
     │── README.md # Project documentation
 
----
 
-## 📊 Example Dashboard
-### Overview
-![overview](assets/overview.png)
-
-### Retention & Funnel
-![retention](assets/retention&funnel.png)
-
-### Simulation Trend
-![correlation](assets/simulation_trend.png)
 
 
 ---
