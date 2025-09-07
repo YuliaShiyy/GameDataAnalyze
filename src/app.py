@@ -49,7 +49,7 @@ metrics, figs_overview = render_overview(filtered_data, selected_region) if sect
 fig_retention, fig_funnel = render_retention_funnel(filtered_data) if section == "Retention & Funnel" else (None, None)
 fig_new, fig_purchase_trend, fig_sessions_trend = render_trend(filtered_data) if section == "Simulated Trend" else (None, None, None)
 results_df, fig_corr, fig_scatter, fig_box = render_correlation(filtered_data) if section == "Correlation Analysis" else (None, None, None, None)
-fig_cluster, fig_summary = render_clustering(filtered_data) if section == "Cluster Analysis" else None
+fig_cluster, fig_summary = render_clustering(filtered_data) if section == "Cluster Analysis" else (None, None)
 model_acc, fig_cm = render_prediction(filtered_data) if section == "Predictive Modeling" else (None, None)
 
 # --- Export Report ---
