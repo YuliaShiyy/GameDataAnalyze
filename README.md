@@ -55,6 +55,16 @@ This project is part of my portfolio and demonstrates skills in **data engineeri
 
 ---
 
+## ⚡ Installation
+
+Clone this repo and install dependencies:
+
+    ```bash
+    git clone https://github.com/<your-username>/Game_Data_Analyze.git
+    cd Game_Data_Analyze
+    pip install -r requirements.txt
+---
+
 ## ▶️ Usage
 
 Run the Streamlit app:
@@ -69,7 +79,7 @@ Dataset used: Kaggle - Predict Online Gaming Behaviour Dataset
 .
 For demo purposes, pre-cleaned datasets are placed in the data/ folder.
 
-📌 To Do / Possible Extensions
+## 📌 To Do / Possible Extensions
 
     · Add time-series forecasting for player retention
     
