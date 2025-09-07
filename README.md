@@ -30,5 +30,51 @@ This project is part of my portfolio and demonstrates skills in **data engineeri
 ---
 
 ## 📂 Project Structure
+    Game_Data_Analyze/
+    │── data/ # Datasets
+    │ ├── gaming_data_cleaned.csv
+    │ ├── gaming_data_europe.csv
+    │ └── online_gaming_behavior_dataset.csv
+    │
+    │── notebooks/ # Jupyter notebooks
+    │ └── data_clean.ipynb
+    │
+    │── src/ # Source code
+    │ ├── app.py # Main dashboard entry
+    │ ├── clustering.py # Cluster analysis module
+    │ ├── correlation.py # Correlation analysis module
+    │ ├── data_loader.py # Data loading & preprocessing
+    │ ├── overview.py # Overview module
+    │ ├── prediction.py # Predictive modeling
+    │ ├── report_export.py # Export to PDF
+    │ ├── retention.py # Retention & funnel analysis
+    │ └── simulation_trend.py # Trend simulation
+    │
+    │── requirements.txt # Dependencies
+    │── README.md # Project documentation
 
+---
 
+## ▶️ Usage
+
+Run the Streamlit app:
+
+    streamlit run app.py
+
+---
+
+## 📂 Data
+
+Dataset used: Kaggle - Predict Online Gaming Behaviour Dataset
+.
+For demo purposes, pre-cleaned datasets are placed in the data/ folder.
+
+📌 To Do / Possible Extensions
+
+    · Add time-series forecasting for player retention
+    
+    · Deploy the dashboard online (e.g., Streamlit Cloud / Heroku)
+    
+    · Add more machine learning models (e.g., Random Forest, XGBoost)
+    
+    · Multi-language support 
